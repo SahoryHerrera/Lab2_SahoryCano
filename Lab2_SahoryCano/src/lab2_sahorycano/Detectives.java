@@ -1,14 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab2_sahorycano;
 
 /**
  *
- * @author sahor
+ * @author sahory Herrera
  */
 public class Detectives {
+    //Atrib
+    private String nombre;
+    private int edad;
+    private int añosLab;
+    private String nacionalidad;
+    private int nivel;
     
-}
+    public Detectives() {
+    } // Fin Constructor Granos Basicos
+    
+    
+
+}//fin
+
+ 
+
