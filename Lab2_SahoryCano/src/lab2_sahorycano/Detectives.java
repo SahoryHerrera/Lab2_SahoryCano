@@ -8,18 +8,18 @@ public class Detectives {
     //Atrib
     private String nombre;
     private int edad;
-    private int añosLab;
+    private int añoslab;
     private String nacionalidad;
     private int nivel;
     
     public Detectives() {
     } // Fin Constructor Granos Basicos
     
-    public Detectives(String nombre, int edad, String nacionalidad, int añosLab, int nivel) {
+    public Detectives(String nombre, int edad, String nacionalidad, int añoslab, int nivel) {
         this.nombre = nombre;
         this.edad = edad;
         this.nacionalidad = nacionalidad;
-        this.añosLab = añosLab;
+        this.añoslab = añoslab;
         this.nivel = nivel;
     } // Fin Constructor Granos Basicos
     
@@ -48,12 +48,12 @@ public class Detectives {
         this.nacionalidad = nacionalidad;
     } // Fin Set Nacionalidad
     
-     public int getañosLab() {
-        return añosLab;
+     public int getañoslab() {
+        return añoslab;
     } // Fin Get años laborales
 
-    public void setañosLab(int añosLab) {
-        this.añosLab = añosLab;
+    public void setañoslab(int añoslab) {
+        this.añoslab = añoslab;
     } // Fin Set años laborales
     
       public int getnivel() {
@@ -66,7 +66,7 @@ public class Detectives {
     
     //MA
     public String toString() {
-        return "[Nombre: " + nombre + "][Edad: " + edad + "][Nacionalidad: " + nacionalidad + "][Años Laborales: " + añosLab + "][Nivel: " + nivel + ']';
+        return "[Nombre: " + nombre + "][Edad: " + edad + "][Nacionalidad: " + nacionalidad + "][Años Laborales: " + añoslab + "][Nivel: " + nivel + ']';
     } // Fin To String
 
 
