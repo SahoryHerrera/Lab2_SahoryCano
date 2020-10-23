@@ -11,7 +11,7 @@ public class Lab2_SahoryCano {
 
     static Scanner entrada = new Scanner(System.in);
     static ArrayList Detectiveslist = new ArrayList();
-    static ArrayList Casos = new ArrayList();
+    static ArrayList Casoslist = new ArrayList();
 
     public static void main(String[] args) {
         char resp = 's';
@@ -68,7 +68,7 @@ public class Lab2_SahoryCano {
                     System.out.println("¡Detective Eliminado Exitosamente!");
                 }
                 break;
-                case 3:
+                case 3: {
                     System.out.println("------||Modificar Detective||---------");
                     for (Object o : Detectiveslist) {
                         System.out.println(Detectiveslist.indexOf(o) + " = " + o);
@@ -116,14 +116,169 @@ public class Lab2_SahoryCano {
                             System.out.println("¡Entrada no valida!");
                     } // Fin Switch
                     System.out.println("¡Se ha realizado la modificacion exitosamente!");
+                } // Fin Switch
 
-                case 4:
+                break;
+
+                case 4: {
                     System.out.println("------||Lista de Detectives||---------");
                     for (Object o : Detectiveslist) {
                         System.out.println(Detectiveslist.indexOf(o) + " = " + o);
                     } // Fin For
-                    break;
-                case 5:
+                }
+                break;
+
+                case 5: {
+                    System.out.println("--------||Registrar  Caso||-----------");
+                    System.out.print("Ingrese el lugar: ");
+                    String lugar = entrada.next();
+                    System.out.print("Ingrese la descripción: ");
+                    String descripcion = entrada.next();
+                    System.out.println("---------||tipo de caso||-------------");
+                    System.out.println("1.-Homicidio");
+                    System.out.println("2.-Secuestro");
+                    System.out.println("3.-Robo");
+                    System.out.println("Ingrese tipo de caso que desea registrar");
+                    System.out.print("-> ");
+                    int tipo = entrada.nextInt();
+                    String tipo2 = "";
+                    switch (tipo) {
+                        case 1:
+                            tipo2.equals("Homicidio");
+                            break;
+                        case 2:
+                            tipo2.equals("Secuestro");
+                            break;
+                        case 3:
+                            tipo2.equals("Robo");
+                            break;
+                        default:
+                            System.out.println("¡Entrada no valida!");
+                    } // Fin Switch
+
+                    System.out.println("--||Lista de Detectives Disponibles||--");
+                    for (Object o : Detectiveslist) {
+                        System.out.println(Detectiveslist.indexOf(o) + " = " + o);
+                    } // Fin For
+                    System.out.print("Ingrese la posicion del detective que desea: ");
+                    int posi = entrada.nextInt();
+                    String name = "";
+                    name = ((Detectives) Detectiveslist.get(posi)).getNombre();
+                    System.out.println("---------||Estados del caso||----------");
+                    System.out.println("1.-Proceso");
+                    System.out.println("2.-Resuelto");
+                    System.out.println("Ingrese el estado del caso");
+                    System.out.print("-> ");
+                    int estado = entrada.nextInt();
+                    String tipo3 = "";
+                    switch (estado) {
+                        case 1:
+                            tipo3.equals("Proceso");
+                            break;
+                        case 2:
+                            tipo3.equals("Resuelto");
+                            break;
+                        default:
+                            System.out.println("¡Entrada no valida!");
+                    } // Fin Switch
+                    Casoslist.add(new Casos(lugar, descripcion, tipo2, name, tipo3));
+                    System.out.println("¡Se Registado el caso!");
+                }
+                break;
+
+                case 6: {
+                    System.out.println("------||Modificar Casos||---------");
+                    for (Object o : Casoslist) {
+                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    } // Fin For
+                    System.out.print("Ingrese la posicion que desea modificar: ");
+                    int pos = entrada.nextInt();
+                    System.out.println("+---------[¿Qué desea modificar]------+");
+                    System.out.println("|    (1) Lugar                        |");
+                    System.out.println("|    (2) Descripcion                  |");
+                    System.out.println("|    (3) Tipo de Caso                 |");
+                    System.out.println("|    (4) Detective a Cargo            |");
+                    System.out.println("|    (5) Estado de Caso               |");
+                    System.out.println("+-------------------------------------+");
+                    System.out.println("|       Ingrese la opcion deseada     |");
+                    System.out.println("+-------------------------------------+");
+                    System.out.print("-> ");
+                    int opciona = entrada.nextInt();
+
+                    switch (opciona) {
+                        case 1:
+                            System.out.print("Ingrese el Lugar: ");
+                            String lugar = entrada.next();
+                            ((Casos) Casoslist.get(pos)).setlugar(lugar);
+                            break;
+                        case 2:
+                            System.out.print("Ingrese la descripcion: ");
+                            String descripcion = entrada.next();
+                            ((Casos) Casoslist.get(pos)).setdescripcion(descripcion);
+                            break;
+                        case 3:
+                            System.out.println("---------||tipo de caso||-------------");
+                            System.out.println("1.-Homicidio");
+                            System.out.println("2.-Secuestro");
+                            System.out.println("3.-Robo");
+                            System.out.println("Ingrese tipo de caso que desea registrar");
+                            System.out.print("-> ");
+                            int tipo = entrada.nextInt();
+                            String tipo2 = "";
+                            switch (tipo) {
+                                case 1:
+                                    tipo2.equals("Homicidio");
+                                    break;
+                                case 2:
+                                    tipo2.equals("Secuestro");
+                                    break;
+                                case 3:
+                                    tipo2.equals("Robo");
+                                    break;
+                                default:
+                                    System.out.println("¡Entrada no valida!");
+                            } // Fin Switch
+                            ((Casos) Casoslist.get(pos)).settipo2(tipo2);
+
+                            break;
+                        case 4:
+                            System.out.println("--||Lista de Detectives Disponibles||--");
+                            for (Object o : Detectiveslist) {
+                                System.out.println(Detectiveslist.indexOf(o) + " = " + o);
+                            } // Fin For
+                            System.out.print("Ingrese la posicion del detective que desea: ");
+                            int posi = entrada.nextInt();
+                            String name = "";
+                            name = ((Detectives) Detectiveslist.get(posi)).getNombre();
+                            ((Casos) Casoslist.get(pos)).setname(name);
+                            break;
+                        case 5:
+                            System.out.println("---------||Estados del caso||----------");
+                            System.out.println("1.-Proceso");
+                            System.out.println("2.-Resuelto");
+                            System.out.println("Ingrese el estado del caso");
+                            System.out.print("-> ");
+                            int estado = entrada.nextInt();
+                            String tipo3 = "";
+                            switch (estado) {
+                                case 1:
+                                    tipo3.equals("Proceso");
+                                    break;
+                                case 2:
+                                    tipo3.equals("Resuelto");
+                                    break;
+                                default:
+                                    System.out.println("¡Entrada no valida!");
+                            } // Fin Switch
+                            ((Casos) Casoslist.get(pos)).settipo3(tipo3);
+
+                            break;
+                        default:
+                            System.out.println("¡Entrada no valida!");
+                    } // Fin Switch
+
+                }//fin de case 6
+                break;
 
                 case 10:
                     resp = 'n';
