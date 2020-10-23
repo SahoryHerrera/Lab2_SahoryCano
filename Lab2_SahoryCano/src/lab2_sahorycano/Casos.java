@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab2_sahorycano;
 
 /**
  *
- * @author sahor
+ * @author sahory Herrera
  */
 public class Casos {
-    
+    //Atrib
+
+    private String lugar;
+    private String descripcion;
+    private String tipo2;
+    private String name;
+    private String tipo3;
 }

@@ -22,9 +22,9 @@ public class Lab2_SahoryCano {
             System.out.println("|   2.-Eliminar  Detective           |");
             System.out.println("|   3.-Modificar Detective           |");
             System.out.println("|   4.-Listar    Detectives          |");
+            System.out.println("+------------------------------------+");
             System.out.println("|   5.-Registar  Casos               |");
             System.out.println("|   6.-Modificar Casos               |");
-            System.out.println("+------------------------------------+");
             System.out.println("|   7.-Listar    Casos               |");
             System.out.println("|   8.-Listar    Casos Resueltos     |");
             System.out.println("|   9.-Listar    Casos Pendientes    |");
@@ -36,6 +36,8 @@ public class Lab2_SahoryCano {
             int opcion = entrada.nextInt();
             switch (opcion) {
                 case 1: {
+
+                    System.out.println("-------||Agregar  Detective||---------");
                     System.out.print("Ingrese el Nombre: ");
                     String nombre = entrada.next();
                     System.out.print("Ingrese la edad : ");
@@ -121,6 +123,8 @@ public class Lab2_SahoryCano {
                         System.out.println(Detectiveslist.indexOf(o) + " = " + o);
                     } // Fin For
                     break;
+                case 5:
+
                 case 10:
                     resp = 'n';
                     break;

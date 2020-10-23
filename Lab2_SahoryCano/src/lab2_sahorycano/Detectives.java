@@ -13,7 +13,7 @@ public class Detectives {
     private int nivel;
     
     public Detectives() {
-    } // Fin Constructor Granos Basicos
+    } // Fin Constructor Detectives
     
     public Detectives(String nombre, int edad, String nacionalidad, int añoslab, int nivel) {
         this.nombre = nombre;
@@ -21,7 +21,7 @@ public class Detectives {
         this.nacionalidad = nacionalidad;
         this.añoslab = añoslab;
         this.nivel = nivel;
-    } // Fin Constructor Granos Basicos
+    } // Fin Constructor Detectives
     
     //mutadores
      public String getNombre() {
