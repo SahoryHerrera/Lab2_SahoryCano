@@ -114,5 +114,19 @@ public class Lab2_SahoryCano {
                             System.out.println("¡Entrada no valida!");
                     } // Fin Switch
                     System.out.println("¡Se ha realizado la modificacion exitosamente!");
-            
-                   
+
+                case 4:
+                    System.out.println("------||Lista de Detectives||---------");
+                    for (Object o : Detectiveslist) {
+                        System.out.println(Detectiveslist.indexOf(o) + " = " + o);
+                    } // Fin For
+                    break;
+                case 10:
+                    resp = 'n';
+                    break;
+                default:
+                    System.out.println("\u001B[31m¡Entrada no valida!\u001B[30m");
+            } // Fin Switch
+        } // Fin While
+    } //Fin Main
+} //Fin Class
