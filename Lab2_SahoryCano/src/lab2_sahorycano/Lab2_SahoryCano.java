@@ -48,7 +48,7 @@ public class Lab2_SahoryCano {
                     int añoslab = entrada.nextInt();
                     System.out.print("Ingrese Nivel  : ");
                     int nivel = entrada.nextInt();
-                    while (nivel < 1 && nivel > 11) {
+                    while (nivel <= 1 && nivel >= 10) {
                         System.out.println("Número no válido , el rango disponible es de 1 - 10");
                         System.out.print("Ingrese un numero: ");
                         nivel = entrada.nextInt();
@@ -271,14 +271,35 @@ public class Lab2_SahoryCano {
                                     System.out.println("¡Entrada no valida!");
                             } // Fin Switch
                             ((Casos) Casoslist.get(pos)).settipo3(tipo3);
-
                             break;
+
                         default:
                             System.out.println("¡Entrada no valida!");
                     } // Fin Switch
-
+                    System.out.println("¡Se ha realizado la modificacion exitosamente!");
                 }//fin de case 6
                 break;
+
+                case 7: {
+                    System.out.println("---------||Listado de Casos||---------");
+                    System.out.println("Homicidio: ");
+                    for (Object o : Casoslist) {
+                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    }
+                    System.out.println("Secuestros: ");
+                    for (Object o : Casoslist) {
+                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    }
+                    System.out.println("Robos: ");
+                    for (Object o : Casoslist) {
+                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    }
+                }
+                break;
+
+                case 8: {
+
+                }
 
                 case 10:
                     resp = 'n';
