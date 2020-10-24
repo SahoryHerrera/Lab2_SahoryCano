@@ -12,6 +12,11 @@ public class Lab2_SahoryCano {
     static Scanner entrada = new Scanner(System.in);
     static ArrayList Detectiveslist = new ArrayList();
     static ArrayList Casoslist = new ArrayList();
+    static ArrayList Homicidioslist = new ArrayList();
+    static ArrayList Roboslist = new ArrayList();
+    static ArrayList Secuestroslist = new ArrayList();
+    static ArrayList Resueltolist = new ArrayList();
+    static ArrayList Procesolist = new ArrayList();
 
     public static void main(String[] args) {
         char resp = 's';
@@ -181,6 +186,25 @@ public class Lab2_SahoryCano {
                         default:
                             System.out.println("¡Entrada no valida!");
                     } // Fin Switch
+
+                    if (tipo == 1) {
+                        Homicidioslist.add(new Homicidios(lugar, descripcion, tipo2, name, tipo3));
+                    } else if (tipo == 2) {
+                        Secuestroslist.add(new Secuestros(lugar, descripcion, tipo2, name, tipo3));
+                    } else if (tipo == 3) {
+                        Roboslist.add(new Robos(lugar, descripcion, tipo2, name, tipo3));
+                    }
+
+                    if (estado == 1) {
+                        Resueltolist.add(new Homicidios(lugar, descripcion, tipo2, name, tipo3));
+                        Resueltolist.add(new Secuestros(lugar, descripcion, tipo2, name, tipo3));
+                        Resueltolist.add(new Robos(lugar, descripcion, tipo2, name, tipo3));
+                    } else if (estado == 2) {
+                        Procesolist.add(new Homicidios(lugar, descripcion, tipo2, name, tipo3));
+                        Procesolist.add(new Secuestros(lugar, descripcion, tipo2, name, tipo3));
+                        Procesolist.add(new Robos(lugar, descripcion, tipo2, name, tipo3));
+                    }
+
                     Casoslist.add(new Casos(lugar, descripcion, tipo2, name, tipo3));
                     System.out.println("¡Se Registado el caso!");
                 }
@@ -282,25 +306,32 @@ public class Lab2_SahoryCano {
 
                 case 7: {
                     System.out.println("---------||Listado de Casos||---------");
-                    System.out.println("Homicidio: ");
-                    for (Object o : Casoslist) {
-                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    for (Object o : Homicidioslist) {
+                        System.out.println(Homicidioslist.indexOf(o) + " = " + o);
                     }
-                    System.out.println("Secuestros: ");
-                    for (Object o : Casoslist) {
-                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    for (Object o : Secuestroslist) {
+                        System.out.println(Secuestroslist.indexOf(o) + " = " + o);
                     }
-                    System.out.println("Robos: ");
-                    for (Object o : Casoslist) {
-                        System.out.println(Casoslist.indexOf(o) + " = " + o);
+                    for (Object o : Roboslist) {
+                        System.out.println(Roboslist.indexOf(o) + " = " + o);
                     }
+
                 }
                 break;
 
                 case 8: {
-
+                    System.out.println("----||Listado de Casos Resueltos||------");
+                    for (Object o : Resueltolist) {
+                        System.out.println(Resueltolist.indexOf(o) + " = " + o);
+                    } // Fin For
                 }
 
+                case 9: {
+                    System.out.println("----||Listado de Casos Pendientes||------");
+                    for (Object o : Procesolist) {
+                        System.out.println(Procesolist.indexOf(o) + " = " + o);
+                    } // Fin For
+                }
                 case 10:
                     resp = 'n';
                     break;
